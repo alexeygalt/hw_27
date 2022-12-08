@@ -1,1 +1,1 @@
-## HW27. Avito - simple Django project
+## HW27.  - simple Django project
