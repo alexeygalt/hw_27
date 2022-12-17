@@ -1,13 +1,21 @@
 import csv
 import json
 
-csv_file_ads = 'ads.csv'
+csv_file_ads = 'ad.csv'
 json_file_ads = '../ads/fixtures/ads.json'
-ads_model = 'ads.ads'
+ads_model = 'ads.ad'
 
-csv_file_categories = 'categories.csv'
+csv_file_categories = 'category.csv'
 json_file_categories = '../ads/fixtures/categories.json'
-categories_model = 'ads.categories'
+categories_model = 'ads.category'
+
+csv_file_locations = 'location.csv'
+json_file_locations = '../ads/fixtures/locations.json'
+locations_model = 'ads.location'
+
+csv_file_users = 'user.csv'
+json_file_users = '../ads/fixtures/users.json'
+users_model = 'users.user'
 
 
 def replace_values(value):
@@ -35,6 +43,14 @@ def converter_to_json(csv_path: str, json_path: str, model):
     with open(json_path, 'w', encoding='utf-8') as file:
         file.write(json.dumps(result, indent=4, ensure_ascii=False))
 
+    return f'Data from csv ({csv_path}) converted to json ({json_path})'
 
-converter_to_json(csv_file_ads, json_file_ads, ads_model)
-converter_to_json(csv_file_categories, json_file_categories,categories_model)
+
+if __name__ == '__main__':
+    print(converter_to_json(csv_file_categories, json_file_categories, categories_model))
+    print(converter_to_json(csv_file_ads, json_file_ads, ads_model))
+    print(converter_to_json(csv_file_locations, json_file_locations, locations_model))
+    print(converter_to_json(csv_file_users, json_file_users, users_model))
+
+
+# python3 manage.py loadall python3 manage.py loaddata file.json
