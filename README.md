@@ -1,1 +1,1 @@
-## HW27.  - simple Django project
+## HW28
