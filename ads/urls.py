@@ -1,6 +1,12 @@
 from django.urls import path
+from rest_framework import routers
+
 from .views.ad import *
 from .views.cat import *
+from .views.location import LocationViewSet
+
+loc_router = routers.SimpleRouter()
+loc_router.register('location', LocationViewSet)
 
 urlpatterns = [
 
@@ -15,6 +21,8 @@ urlpatterns = [
     path("cat/create/", CatCreateView.as_view()),
     path("cat/<int:pk>/update/", CatUpdateView.as_view()),
     path("cat/<int:pk>/delete/", CatDeleteView.as_view()),
-
+    path("cat/<int:pk>/delete/", CatDeleteView.as_view()),
 
 ]
+
+urlpatterns += loc_router.urls

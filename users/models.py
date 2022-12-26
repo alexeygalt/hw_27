@@ -10,9 +10,9 @@ class User(models.Model):
         ('moderator', 'модератор')
     ]
 
-    first_name = models.CharField(max_length=50,null=True)
-    last_name = models.CharField(max_length=50,null=True)
-    username = models.CharField(max_length=50,unique=True)
+    first_name = models.CharField(max_length=50, null=True)
+    last_name = models.CharField(max_length=50, null=True)
+    username = models.CharField(max_length=50, unique=True)
     password = models.CharField(max_length=50)
     role = models.CharField(max_length=10, choices=ROLES, default='member')
     age = models.PositiveSmallIntegerField()
@@ -25,5 +25,3 @@ class User(models.Model):
 
     def __str__(self):
         return self.username
-
-
