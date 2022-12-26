@@ -1,19 +1,10 @@
-import json
-
-from django.conf import settings
-from django.core.paginator import Paginator
 from django.db.models import Q
-from django.http import JsonResponse
-from django.shortcuts import get_object_or_404
-from django.utils.decorators import method_decorator
-from django.views.decorators.csrf import csrf_exempt
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
+
 from rest_framework.generics import ListAPIView, RetrieveAPIView, CreateAPIView, UpdateAPIView, DestroyAPIView
 
 from ads.models.ad import Ad
-from ads.models.category import Category
+
 from ads.serializers.ad import AdSerializer, AdCreateSerializer, AdUpdateSerializer, AdImageSerializer
-from users.models import User
 
 
 class AdListView(ListAPIView):
