@@ -4,6 +4,8 @@ from rest_framework import routers
 from .views.ad import *
 from .views.cat import *
 from .views.location import LocationViewSet
+from .views.selected import SelectionListView, SelectionDetailView, SelectionCreateView, SelectionUpdateView, \
+    SelectionDeleteView
 
 loc_router = routers.SimpleRouter()
 loc_router.register('location', LocationViewSet)
@@ -22,6 +24,12 @@ urlpatterns = [
     path("cat/<int:pk>/update/", CatUpdateView.as_view()),
     path("cat/<int:pk>/delete/", CatDeleteView.as_view()),
     path("cat/<int:pk>/delete/", CatDeleteView.as_view()),
+    path("selection/", SelectionListView.as_view()),
+    path("selection/<int:pk>", SelectionDetailView.as_view()),
+    path("selection/create/", SelectionCreateView.as_view()),
+    path("selection/<int:pk>/update/", SelectionUpdateView.as_view()),
+    path("selection/delete/", SelectionDeleteView.as_view()),
+
 
 ]
 

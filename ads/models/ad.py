@@ -21,3 +21,5 @@ class Ad(models.Model):
         return self.name
 
 
+
+
